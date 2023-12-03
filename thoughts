@@ -1,0 +1,28 @@
+PROJECT:
+GNL (GET NEXT LINE)
+This project is about programming a function that returns a line read from a file descriptor.
+
+First Thoughts:
+I have to read the first line of the file called by it's own File Descriptor.
+Static Variables will be often used.
+If a loop of any kind is called my function should read the entire file, one line at a time.
+It should work to read both from a file, than from the standard input.
+Auxiliar functions must be in the get_next_line_utils.c
+If it has nothing to read, or if any error occurs, then it should return NULL.
+Every time the end of the line is reached, then it should return the current line.
+Every line must have the \n character, except if the end of file was reached and does not end with a \n character.
+
+Good Concepts to learn:
+Static Variables. (DONE)
+Buffer Size. (DONE)
+Malloc and Free (NOT DONE YET)
+
+
+First Steps:
+Learn about System Calls (DONE)
+Learn about file descriptors (DONE)
+
+Starting to Assemble Things:
+What if i use a file as like a "temporary storage" just to store the lines read from the original file descriptor?
+A line ends at the \n character. What if i read through the line until i reach the \n character? But how?
+
