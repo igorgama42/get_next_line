@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:54:21 by igama             #+#    #+#             */
-/*   Updated: 2023/12/12 14:41:02 by igama            ###   ########.fr       */
+/*   Updated: 2023/12/12 18:47:22 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	*make_line(char	*bytes_read)
 
 	i = 0;
 	if (!bytes_read)
-		return(NULL);
+		return (NULL);
 	while (bytes_read[i] && bytes_read[i] != '\n')
 		i++;
 	new_line = malloc(sizeof(char) * (i + 2));
@@ -42,7 +42,7 @@ static char	*line_left(char *bytes_read)
 	size_t	i;
 	size_t	j;
 	char	*rest;
-	
+
 	i = 0;
 	while (bytes_read[i] && bytes_read[i] != '\n')
 		i++;
@@ -66,9 +66,9 @@ static char	*line_left(char *bytes_read)
 
 static char	*read_file(int fd, char *bytes_read)
 {
-	char 	*buffer;
+	char	*buffer;
 	int		flag;
-	
+
 	flag = 1;
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
@@ -90,7 +90,7 @@ static char	*read_file(int fd, char *bytes_read)
 
 char	*get_next_line(int fd)
 {
-	static char *bytes_read;
+	static char	*bytes_read;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
@@ -101,17 +101,4 @@ char	*get_next_line(int fd)
 	line = make_line(bytes_read);
 	bytes_read = line_left(bytes_read);
 	return (line);
-}
-
-#include <fcntl.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	int	fd;
-
-	fd = open("test.txt", O_RDONLY);
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
 }

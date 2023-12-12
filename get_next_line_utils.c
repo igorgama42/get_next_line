@@ -6,28 +6,28 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 22:11:00 by igama             #+#    #+#             */
-/*   Updated: 2023/12/08 04:21:18 by igama            ###   ########.fr       */
+/*   Updated: 2023/12/12 18:49:08 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    char    temp_ch;
-    int     i;  
+	char	temp_ch;
+	int		i;
 
 	if (!s)
 		return (NULL);
-    if (c == 0)
+	if (c == 0)
 		return ((char *)s + ft_strlen(s));
 	temp_ch = c;
-    i = 0;
-    while (*(s + i) && (*(s + i) != temp_ch))
-        i++;
-    if (*(s + i) == temp_ch)
-        return ((char *) s + i); 
-    return (0);
+	i = 0;
+	while (*(s + i) && (*(s + i) != temp_ch))
+		i++;
+	if (*(s + i) == temp_ch)
+		return ((char *) s + i);
+	return (0);
 }
 
 size_t	ft_strlen(const char *s)
