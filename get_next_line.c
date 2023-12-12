@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:54:21 by igama             #+#    #+#             */
-/*   Updated: 2023/12/08 09:42:59 by igama            ###   ########.fr       */
+/*   Updated: 2023/12/12 14:41:02 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static char	*line_left(char *bytes_read)
 		rest[j++] = bytes_read[i++];
 	rest[j] = '\0';
 	free(bytes_read);
-	return (bytes_read);
+	return (rest);
 }
 
 static char	*read_file(int fd, char *bytes_read)
