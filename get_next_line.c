@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:54:21 by igama             #+#    #+#             */
-/*   Updated: 2023/12/12 18:47:22 by igama            ###   ########.fr       */
+/*   Updated: 2023/12/12 20:41:39 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ static char	*read_file(int fd, char *bytes_read)
 		}
 		buffer[flag] = '\0';
 		bytes_read = ft_strjoin(bytes_read, buffer);
+		if (!bytes_read)
+			return (NULL);
 	}
 	free(buffer);
 	return (bytes_read);
@@ -102,3 +104,14 @@ char	*get_next_line(int fd)
 	bytes_read = line_left(bytes_read);
 	return (line);
 }
+
+/*int	main(void)
+{
+	int	fd;
+
+	fd = open("test.txt", O_RDONLY);
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+
+}*/

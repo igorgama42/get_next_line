@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 22:11:00 by igama             #+#    #+#             */
-/*   Updated: 2023/12/12 18:49:08 by igama            ###   ########.fr       */
+/*   Updated: 2023/12/12 20:39:54 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	if (!s1)
 		s1 = ft_strdup("");
-	if (!s1 || !s2)
-		return (NULL);
 	len_sum = ft_strlen(s1) + ft_strlen(s2) + 1;
 	str = malloc(sizeof(char) * (len_sum));
 	if (!str)
