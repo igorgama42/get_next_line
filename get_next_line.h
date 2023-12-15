@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 22:10:32 by igama             #+#    #+#             */
-/*   Updated: 2023/12/12 18:47:55 by igama            ###   ########.fr       */
+/*   Updated: 2023/12/14 21:34:48 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 # include <unistd.h>
 # include <fcntl.h>
-# include <stdio.h>
 # include <stdlib.h>
 
 char	*get_next_line(int fd);
