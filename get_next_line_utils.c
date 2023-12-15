@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 22:11:00 by igama             #+#    #+#             */
-/*   Updated: 2023/12/12 20:39:54 by igama            ###   ########.fr       */
+/*   Updated: 2023/12/14 21:29:00 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[j])
 		str[i++] = s2[j++];
 	str[i] = '\0';
+	free((void *)s1);
 	return (str);
 }
