@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/30 15:54:21 by igama             #+#    #+#             */
-/*   Updated: 2023/12/16 15:53:42 by igama            ###   ########.fr       */
+/*   Created: 2023/12/16 15:49:00 by igama             #+#    #+#             */
+/*   Updated: 2023/12/16 16:17:53 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-static char	*make_line(char	*bytes_read)
+static char	*make_line(char *bytes_read)
 {
 	size_t	i;
 	char	*new_line;
@@ -84,9 +84,7 @@ static char	*read_file(int fd, char *bytes_read)
 		buffer[flag] = '\0';
 		bytes_read = ft_strjoin(bytes_read, buffer);
 		if (!bytes_read)
-		{
 			return (NULL);
-		}
 	}
 	free(buffer);
 	return (bytes_read);
@@ -94,15 +92,15 @@ static char	*read_file(int fd, char *bytes_read)
 
 char	*get_next_line(int fd)
 {
-	static char	*bytes_read;
+	static char	*bytes_read[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	bytes_read = read_file(fd, bytes_read);
-	if (!bytes_read)
+	bytes_read[fd] = read_file(fd, bytes_read[fd]);
+	if (!bytes_read[fd])
 		return (NULL);
-	line = make_line(bytes_read);
-	bytes_read = line_left(bytes_read);
+	line = make_line(bytes_read[fd]);
+	bytes_read[fd] = line_left(bytes_read[fd]);
 	return (line);
 }
