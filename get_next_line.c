@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:54:21 by igama             #+#    #+#             */
-/*   Updated: 2023/12/16 15:53:42 by igama            ###   ########.fr       */
+/*   Updated: 2023/12/16 17:45:56 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*make_line(char	*bytes_read)
 	char	*new_line;
 
 	i = 0;
-	if (!bytes_read)
+	if (!*bytes_read)
 		return (NULL);
 	while (bytes_read[i] && bytes_read[i] != '\n')
 		i++;
